@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <!-- site metas -->
-  <title>Entro</title>
+  <title>Rocky</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -67,10 +67,8 @@
                       <li> <a href="Concerts.html">Concerts </a> </li>
                       <li> <a href="gallery.html">Gallery</a> </li>
                       <li> <a href="contact.html">Contact</a> </li>
-      
-                        <li > <a   href="#contact">login</a> </li>
-                      <li  > <a  class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
-                      
+                      <li> <a href="#contact">login</a> </li>
+                      <li> <a class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                      </ul>
                    </nav>
                 
@@ -104,7 +102,7 @@
     <div class="row display_boxflex">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
      
-		<div id="src_container" style="width: 800; height: 400px; border: 1px solid grey"></div>
+		<div id="program_text" style="width: 800; height: 400px; border: 1px solid grey"></div>
 		
 		<script>
 			var require = { paths: { vs: '../node_modules/monaco-editor/min/vs' } };
@@ -114,8 +112,9 @@
 		<script src="../node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
 
 		<script>
-			var editor = monaco.editor.create(document.getElementById('src_container'), {
-				value: ['Say "Hello"', 'Let there be light'].join('\n'),
+			window.editor = monaco.editor.create(document.getElementById('program_text'), {
+				value: ['Tommy was a lovestruck ladykiller',  
+					'Say "Hello " + Tommy'].join('\n'),
 				language: 'rockstar'
 			});
 		</script>
@@ -123,15 +122,15 @@
       
       <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
       	Input of the program:
-      	<textarea rows="5" cols="80" name="program_input" style="width: 100%"></textarea>
+      	<textarea rows="5" cols="80" id="program_input" style="width: 100%"></textarea>
       </div>
       <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12">
-      	<button value="Run!">Run!</button>
+      	<button value="Run!" onClick="run();">Run!</button>
       </div>
     
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 	    Output of the program:
-      	<textarea rows="5" cols="80" name="program_output" style="width: 100%"></textarea>
+      	<textarea rows="5" cols="80" id="program_output" style="width: 100%"></textarea>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
         <div class="about-box">
@@ -242,6 +241,36 @@
           <script src="js/custom.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
+<script type="text/javascript">
+function run() {
+	var txt = window.editor.getValue();
+	alert(txt);
+}
+
+function output(string) {
+    document.getElementById('program_output').value += string + '\n';
+}
+
+$.ajax({
+  accepts: {
+    mycustomtype: 'application/x-some-custom-type'
+  },
+ 
+  // Instructions for how to deserialize a `mycustomtype`
+  converters: {
+    'text mycustomtype': function(result) {
+      // Do Stuff
+      return newresult;
+    }
+  },
+ 
+  // Expect a `mycustomtype` back from server
+  dataType: 'mycustomtype'
+});
+
+
+
+</script>
 
 
 </body>
