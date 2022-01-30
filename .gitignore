@@ -2,3 +2,5 @@
 .settings
 node_modules/monaco-editor/dev/
 node_modules/monaco-editor/esm/
+/target/
+/logs
