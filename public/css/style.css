@@ -945,7 +945,7 @@ transition: all 0.3s ease-in;
      vertical-align: middle;
     margin: 6px 0px;
 }
- .main-menu ul>li:nth-child (6) {
+ .main-menu ul>li:nth-child(6) {
      padding-right: 0px;
 }
  .nav>li {
@@ -1541,5 +1541,8 @@ padding: 45px 0;
 text-align: center;}
 
 
+.codestyle {
+ font-family:-apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,system-ui,Ubuntu,Droid Sans,sans-serif;
+}
 
 
