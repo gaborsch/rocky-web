@@ -12,6 +12,7 @@ import java.net.http.HttpRequest;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.jetty.io.WriterOutputStream;
 import org.eclipse.jetty.server.Request;
@@ -31,8 +32,8 @@ public final class RockstarHandler extends AbstractHandler {
 		String path = baseRequest.getPathInContext();
 
 		if (path.startsWith("/execute")) {
-			System.out.println(
-					"Processor captured " + baseRequest.getPathInContext() + "?" + baseRequest.getQueryString());
+//			System.out.println(
+//					"Processor captured " + baseRequest.getPathInContext() + "?" + baseRequest.getQueryString());
 
 			response.setContentType("text/html;charset=utf-8");
 			response.setStatus(HttpServletResponse.SC_OK);
@@ -49,10 +50,10 @@ public final class RockstarHandler extends AbstractHandler {
 //			writer.println("<hr />\nDate: " + new Date());
 
 			writer.println(output);
-			writer.println("(Date: " + new Date() + ")");
+//			writer.println("(Date: " + new Date() + ")");
 		} else {
-			System.out.println(
-					"Processor passed " + baseRequest.getPathInContext() + ", ?: " + baseRequest.getQueryString());
+//			System.out.println(
+//					"Processor passed " + baseRequest.getPathInContext() + ", ?: " + baseRequest.getQueryString());
 		}
 	}
 
@@ -74,7 +75,9 @@ public final class RockstarHandler extends AbstractHandler {
 		InputStream is = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
 		PrintStream opw = new PrintStream(output, true, StandardCharsets.UTF_8);
 		PrintStream epw = new PrintStream(error, true, StandardCharsets.UTF_8);
-		return Environment.create(is, opw, epw, new HashMap<String, String>());
+		Map<String, String> options = new HashMap<>();
+		options.put("--disable-native-java", "--disable-native-java");
+		return Environment.create(is, opw, epw, options);
 	}
 
 }
