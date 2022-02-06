@@ -61,10 +61,10 @@
                 <div class="limit-box">
                   <nav class="main-menu ">
                     <ul class="menu-area-main">
-                      <li class="active"> <a href="index.html">Home</a> </li>
+                      <li> <a href="index.html">Home</a> </li>
                       <li> <a href="try-it.html">Try it online!</a> </li>
-                      <li> <a href="rockstar-specification.html">Rockstar Specification</a> </li>
-                      <li> <a href="source-and-setup.html">Source</a> </li>
+                      <li> <a href="rockstar-specification.html">Specification</a> </li>
+                      <li class="active"> <a href="source-and-setup.html">Source</a> </li>
                       <li> </li> 
                      </ul>
                    </nav>                
@@ -86,30 +86,56 @@
 <div id="about" class="about">
   <div class="container">
     <div class="row display_boxflex">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="about-text regular-list">
-          <h2>About Rocky</h2>
+          <h2>Where to find Rocky?</h2>
           <p>
-	          Rocky is an interpreter of the <a href="https://github.com/RockstarLang/rockstar">Rockstar</a> programming language, fully compliant with the spec, written in Java,
-	          Rocky offers many unique features like:
-	          <ul>
-	          <li>Support for the DEC64 numeric type that was described in the original language specification</li>
-	          <li>Object-Oriented Programming</li>
-	          <li>Debugging</li>
-	          <li>Extended features like aliasing, advanced array handling</li>
-	          <li>JAVA binding (available only offline)</li>
-	          </ul>
+	          Rocky is available on Github via <a href="https://github.com/gaborsch/rocky">https://github.com/gaborsch/rocky</a>. 
 			</p>
 		</div>
-	        <div class="button-rounded">
-	          <a style="display:none" href="rocky-extensions.html">Read More</a>
-	          <a href="try-it.html">Try it now!</a>
-	        </div>
-      </div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <div class="about-box">
-          <figure><img src="images/about.png" alt="#" /></figure>
-        </div>
+        <div class="about-text regular-list">
+          <h2>How to install it offline?</h2>
+          <p>
+	         The easiest way is if you clone the repository: <code>git clone https://github.com/gaborsch/rocky.git</code>. 
+	         After installing locally, you can enjoy the CLI debugger, play with different options, and you may even use the native Java binding to run Java code from Rocky!     
+		  </p>
+          <p>
+	         To execute your Rockstar poem, you can run <code>rockstar.bat my-poem.rock</code> (Windows) or <code>./rockstar my-poem.rock</code> (Linux). 
+	         You must have at least Java8 JRE installed.  
+		  </p>
+          <p>
+             On Linux, you can execute <code>install.sh</code> to install <code>/usr/bin/rockstar</code> as a standalone executable.
+		  </p>
+		</div>
+        <div class="about-text regular-list">
+          <h2>I'm stuck with my code!</h2>
+          <p>
+	        There is a help for every command. Try <code>rockstar help run</code> for example.  
+		  </p>
+          <p>
+	        If the syntax is messy, try <code>rockstar list my-poem.rock</code> to list, or <code>rockstar list -x my-poem.rock</code> to get your code explained.  
+		  </p>
+          <p>
+	        The language specification is available <a href="rockstar-specification.html">here</a>.  
+		  </p>
+		</div>
+        <div class="about-text regular-list">
+	      <h2>How to use the debugger?</h2>
+          <p>
+	        Start your program with <code>rockstar debug my-poem.rock</code>. It will execute your program step-by-step, printing each statement before executing. 
+	        Enter a debug command and press <code>Enter</code> to continue.
+	        <br /> 
+	        At the command prompt enter <code>?</code> to get more help.
+	        <ul>
+	        	<li>Step Into / Step Over / Step Return or Run with <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code> (Pressing Enter without command means Step Into)</li>
+	        	<li>Explain expression evaluation with <code>x</code> or <code>1</code></li>
+	        	<li>Show all variable with <code>s</code></li>
+	        	<li>Print the statement to execute with <code>.</code> (no execution)</li>
+	        	<li>List your whole program with <code>list</code> or <code>list -x</code></li>
+	        	<li>Exit to command prompt with <code>exit</code></li>
+	        </ul>
+		  </p>
+		</div>		
       </div>
     </div>
 

@@ -84,6 +84,11 @@
      padding: 0px;
      list-style: none;
 }
+regular-list ul, li, ol {
+     margin: 0 30px 0;
+     padding: 0px;
+     list-style: disc;
+}
  p {
      margin: 0px;
      font-weight: 300;
@@ -1136,6 +1141,11 @@ transition: ease all 0.5s;
      
 }
 
+ .about-text {
+	padding: 0 0 50px 0;
+     
+}
+
 .display_boxflex {
 
      display: flex;
@@ -1508,9 +1518,8 @@ justify-content: center;
 
  .copyright {
      padding: 23px 0px;
-
      margin-top: 55px;
-     border-top: #ddd solid 1px;
+/*     border-top: #ddd solid 1px;*/
 
 }
  .copyright p {
@@ -1545,4 +1554,49 @@ text-align: center;}
  font-family:-apple-system,BlinkMacSystemFont,Segoe WPC,Segoe UI,HelveticaNeue-Light,system-ui,Ubuntu,Droid Sans,sans-serif;
 }
 
+#program_output {	
+    margin: 0 16px;
+}
 
+.button-rounded a {
+	font-size: 16px;
+	border: #000 solid 1px;
+	background-color: #000;
+	color: #fff !important;
+	padding: 9px 0px;
+	max-width: 171px;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	border-radius: 30px;
+	margin: 6px 0; 
+}
+
+.button-rounded a:hover {
+	color: #fff;
+	background: #0ed1f0;
+	border-radius: 30px;
+	transition: all 0.3s ease-in;
+ }
+
+/* Specification HTML rules */
+article svg.octicon, article .zeroclipboard-container {
+	display: none
+}
+
+article pre {
+    background-color: #fff;
+    border: 1px dotted;
+    margin: 6px 0;
+    padding: 0 6px;
+}
+
+article code {
+	color: #333;
+    font-weight: bolder;
+    background-color: #fff;    
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+	padding-top: 16px;	
+}

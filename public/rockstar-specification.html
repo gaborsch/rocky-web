@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>Rocky</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- fevicon -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="css/responsive.css">  
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+
+<body class="main-layout contineer_page">
+  <!-- loader  -->
+  <div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+  </div>
+  <!-- end loader -->
+  <!-- header -->
+
+<header>
+    <!-- header inner -->
+
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col logo_section">
+              <div class="full">
+                <div class="center-desk">
+                  <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-9">
+              
+               <div class="menu-area">
+                <div class="limit-box">
+                  <nav class="main-menu ">
+                    <ul class="menu-area-main">
+                      <li> <a href="index.html">Home</a> </li>
+                      <li> <a href="try-it.html">Try it online!</a> </li>
+                      <li class="active"> <a href="rockstar-specification.html">Rockstar Specification</a> </li>
+                      <li> <a href="source-and-setup.html">Source</a> </li>
+                      <li> </li> 
+                     </ul>
+                   </nav>
+                
+               </div> 
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- end header inner -->
+
+     <!-- end header -->
+   
+  </header>
+
+
+
+<!-- about  -->
+<div id="about" class="about">
+  <div class="container">
+    <div class="row display_boxflex">
+    
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+		The most recent version of the Rockstar language specification can be found <a href="https://github.com/RockstarLang/rockstar/blob/main/spec.md">here</a>.    
+	  </div>    
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="regular-list">
+<article class="markdown-body entry-content container-lg" itemprop="text"><h2 dir="auto"><a id="user-content-the-rockstar-language-specification" class="anchor" aria-hidden="true" href="#the-rockstar-language-specification"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>The Rockstar Language Specification</h2>
+<p dir="auto">Rockstar is intended to give the programmer an unprecedented degree of poetic license when it comes to the composition and structure of their programs.</p>
+<h3 dir="auto"><a id="user-content-file-format" class="anchor" aria-hidden="true" href="#file-format"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>File format</h3>
+<p dir="auto">Rockstar programs are <a href="https://en.wikipedia.org/wiki/UTF-8" rel="nofollow">UTF-8</a> files with the <code>.rock</code> file extension. <em>(Given that for everything included in the current Rockstar specification, UTF-8 is indistinguishable from 7-bit ASCII, that's a fancy way of saying they're plain text files.)</em></p>
+<h3 dir="auto"><a id="user-content-comments" class="anchor" aria-hidden="true" href="#comments"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Comments</h3>
+<p dir="auto">The use of comments in Rockstar programs is strongly discouraged. This is rock'n'roll; it's up to the audience to find their own meaning. If you absolutely insist on commenting your Rockstar programs, comments should be contained in parentheses (). Yes, this means you can't use brackets in arithmetic expressions and may need to decompose complex expressions into multiple evaluations and assignments.</p>
+<p dir="auto">Rockstar developers are not into that whole <a href="https://www.urbandictionary.com/define.php?term=Brevity%20Thing" rel="nofollow">brevity thing</a>.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>(Initialise Tommy = 1337)
+Tommy was a big bad brother. 
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="(Initialise Tommy = 1337)
+Tommy was a big bad brother. " tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 dir="auto"><a id="user-content-variables" class="anchor" aria-hidden="true" href="#variables"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Variables</h3>
+<p dir="auto">Rockstar supports three kinds of variable names.</p>
+<p dir="auto"><strong>Simple variables</strong> are valid identifiers that are not language keywords. A simple variable name must contain only letters, and cannot contain spaces. Note that Rockstar does not allow numbers or underscores in variable names - remember the golden rule of Rockstar syntax: if you can't sing it, you can't have it. Simple variables are case-insensitive.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Variable is 1
+Tommy is a rockstar
+X is 2
+Y is 3
+Put x plus y into result
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Variable is 1
+Tommy is a rockstar
+X is 2
+Y is 3
+Put x plus y into result" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><strong>Common variables</strong> consist of one of the keywords <code>a</code>, <code>an</code>, <code>the</code>, <code>my</code>, <code>your</code> or <code>our</code> followed by whitespace and a unique variable name, which must contain only lowercase ASCII letters a-z. The keyword is part of the variable name, so <code>a boy</code> is a different variable from <code>the boy</code>. Common variables are case-insensitive.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>My variable is 5
+Your variable is 4
+
+Put my variable plus your variable into the total
+Shout the total
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="My variable is 5
+Your variable is 4
+
+Put my variable plus your variable into the total
+Shout the total" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><strong>Proper variables</strong> are multi-word proper nouns - words that aren't language keywords, each starting with an uppercase letter, separated by spaces. (Single-word variables are always simple variables.) Whilst some developers may use this feature to create variables with names like <code>Customer ID</code>, <code>Tax Rate</code> or <code>Distance In KM</code>, we recommend you favour idiomatic variable names such as <code>Doctor Feelgood</code>, <code>Mister Crowley</code>,  <code>Tom Sawyer</code>, and <code>Billie Jean</code>.</p>
+<p dir="auto">(Although not strictly idiomatic, <code>Eleanor Rigby</code>, <code>Peggy Sue</code>, <code>Black Betty</code>, and <code>Johnny B Goode</code> would also all be valid variable names in Rockstar.)</p>
+<p dir="auto">As in Ruby, Python and VBScript, variables are dynamically typed and you don't need to declare variables before use.</p>
+<p dir="auto">If a variable is defined outside of a function, it is in global scope. Global scope variables are available everywhere below their first initialization. If a variable is defined inside of a function, it is in local scope. Local scope variables are available from their initialization until the end of the function they are defined in.</p>
+<p dir="auto">While within a function, if you write to a variable that has been defined in global scope, you write to that variable; you do not define a new local variable.</p>
+<h4 dir="auto"><a id="user-content-a-note-on-case-sensitivity-in-rockstar" class="anchor" aria-hidden="true" href="#a-note-on-case-sensitivity-in-rockstar"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>A note on case sensitivity in Rockstar</h4>
+<p dir="auto">Rockstar keywords and variable names are all case-insensitive, with the exception of proper variables. Proper variables are case-insensitive <strong>apart from the first letter of each word, which must be a capital letter.</strong></p>
+<ul dir="auto">
+<li><code>TIME</code>, <code>time</code>, <code>tIMe</code>, <code>TIMe</code> are all equivalent. Simple variables are case-insensitive.</li>
+<li><code>MY HEART</code>, <code>my heart</code>, <code>My Heart</code> - are all equivalent; the keyword <code>my</code> triggers <strong>common variable</strong> behaviour</li>
+<li><code>Tom Sawyer</code>, <code>TOM SAWYER</code>, <code>TOm SAWyer</code> - are all equivalent; the capital <code>S</code> on <code>Sawyer</code> triggers <strong>proper variable</strong> behaviour</li>
+<li><code>DOCTOR feelgood</code> is not a valid Rockstar variable; the lowercase <code>f</code> on <code>feelgood</code> does not match any valid variable naming style and so the variable name is not valid.</li>
+</ul>
+<h4 dir="auto"><a id="user-content-pronouns" class="anchor" aria-hidden="true" href="#pronouns"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Pronouns</h4>
+<p dir="auto">The keywords <code>it</code>, <code>he</code>, <code>she</code>, <code>him</code>, <code>her</code>, <code>they</code>, <code>them</code>, <code>ze</code>, <code>hir</code>, <code>zie</code>, <code>zir</code>, <code>xe</code>, <code>xem</code>, <code>ve</code>, and <code>ver</code> refer to the last named variable determined by parsing order.</p>
+<p dir="auto">(Please don't file issues pointing out that 80s rockers were a bunch of misogynists and gender-inclusive pronouns aren't really idiomatic. You're right, we know, and we've all learned a lot since then. Besides, <a href="https://en.wikipedia.org/wiki/Look_What_the_Cat_Dragged_In" rel="nofollow"><em>Look What The Cat Dragged In</em></a> was recorded by four cishet guys who spent more money on lipgloss and hairspray than they did on studio time, and it's an absolute classic.)</p>
+<h3 dir="auto"><a id="user-content-types" class="anchor" aria-hidden="true" href="#types"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Types</h3>
+<p dir="auto">Rockstar uses a similar type system to that defined by the <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8" rel="nofollow">ECMAScript type system</a>, except <code>undefined</code> doesn't sound very rock'n'roll so we use <code>mysterious</code> instead.</p>
+<ul dir="auto">
+<li><strong>Mysterious</strong> - the value of any variable that hasn't been assigned a value, denoted by the keyword <code>mysterious</code></li>
+<li><strong>Null</strong> - the null type. Evaluates as equal to zero and equal to false. The keywords <code>nothing</code>, <code>nowhere</code>, <code>nobody</code>, and <code>gone</code> are defined as aliases for <code>null</code></li>
+<li><strong>Boolean</strong> - a logical entity having two values <code>true</code> and <code>false</code>. <em>(The keywords <code>maybe</code> and <code>definitely maybe</code> are reserved for future use)</em></li>
+<li><code>right</code>, <code>yes</code> and <code>ok</code> are valid aliases for <code>true</code></li>
+<li><code>wrong</code>, <code>no</code> and <code>lies</code> are valid aliases for <code>false</code></li>
+<li><strong>Number</strong> - Numbers in Rockstar are double-precision floating point numbers, stored according to the <a href="https://en.wikipedia.org/wiki/IEEE_754" rel="nofollow">IEEE 754</a> standard. <em>(An earlier version of this spec proposed that Rockstar used the <a href="http://www.dec64.com/" rel="nofollow">DEC64</a> numeric type. This is a perfect example of something that seemed like a great idea after a couple of beers but turns out to be prohibitively difficult to implement...)</em></li>
+<li><strong>String</strong> - Rockstar strings are sequences of 16-bit unsigned integer values representing UTF-16 code units. <code>empty</code>, <code>silent</code>, and <code>silence</code> are aliases for the empty string (<code>""</code>).</li>
+</ul>
+<p dir="auto">Functions and function identifiers are not strictly part of the type system in Rockstar 1.0.</p>
+<h2 dir="auto"><a id="user-content-arrays" class="anchor" aria-hidden="true" href="#arrays"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Arrays</h2>
+<p dir="auto">Rockstar supports JavaScript-style arrays. Arrays are zero-based, and dynamically
+allocated when values are assigned using numeric indexes.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="$rockstar"><code>Let the array at 0 be "zero"
+Let the array at 1 be "one"
+Let the array at 255 be "big"
+Shout the array at 0
+Shout the array at 255
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let the array at 0 be &quot;zero&quot;
+Let the array at 1 be &quot;one&quot;
+Let the array at 255 be &quot;big&quot;
+Shout the array at 0
+Shout the array at 255" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Returning an array in a scalar context will return the current length of the array:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="$rockstar"><code>Let my array at 255 be "some value"
+Shout my array (will print the value 256)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let my array at 255 be &quot;some value&quot;
+Shout my array (will print the value 256)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Rockstar also supports non-numeric array keys, so it is valid to say:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>let my array at "some_key" be "some_value"
+Shout my array at "some_key"
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="let my array at &quot;some_key&quot; be &quot;some_value&quot;
+Shout my array at &quot;some_key&quot;" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">You can mix string and numeric keys within the same array. The array length property
+ignores any non-numeric keys:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Let my array at "some_key" be "some_value"
+Shout my array (will print 0, since there are no numeric indexes)
+Let my array at 7 be "some other value"
+Shout my array (will now print 8, since assigning my array at 7 modifies the array length)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let my array at &quot;some_key&quot; be &quot;some_value&quot;
+Shout my array (will print 0, since there are no numeric indexes)
+Let my array at 7 be &quot;some other value&quot;
+Shout my array (will now print 8, since assigning my array at 7 modifies the array length)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">You can also use array index syntax to read (but not write) specific characters from a string</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="$"><code>Let my string be "abcdefg"
+Shout my string at 0 (will print "a")
+Shout my string at 1 (will print "b")
+Let the character be my string at 2
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let my string be &quot;abcdefg&quot;
+Shout my string at 0 (will print &quot;a&quot;)
+Shout my string at 1 (will print &quot;b&quot;)
+Let the character be my string at 2" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 dir="auto"><a id="user-content-queue-operations" class="anchor" aria-hidden="true" href="#queue-operations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Queue operations</h3>
+<p dir="auto">Rockstar arrays can also be created and manipulated by the queue operations <code>rock</code> and <code>roll</code>. (The aliases <code>push</code> and <code>pop</code> are supported for Rockstar developers who are into 80s dance music.)</p>
+<h4 dir="auto"><a id="user-content-pushing-elements-onto-an-array" class="anchor" aria-hidden="true" href="#pushing-elements-onto-an-array"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Pushing elements onto an array</h4>
+<p dir="auto">To create a new empty array, <code>rock</code> the name of the array:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock the array (the array is now [])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock the array (the array is now [])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">To push an element onto the end of an array:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock the array with the element
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock the array with the element" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">This supports list expressions, so you can push multiple elements onto the end of an array:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock ints with 1, 2, 3 (ints is now [1, 2, 3])
+Rock the array with the first, the second, and the third
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock ints with 1, 2, 3 (ints is now [1, 2, 3])
+Rock the array with the first, the second, and the third" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Remember the <code>with</code> keyword is context-sensitive, so in this example:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock ints with 1, 2 with 3, 4, 5
+          ^         ^
+          |         +-- this 'with' is the binary addition operator
+          |
+          +------------ this 'with' is part of the array push syntax
+          
+(ints is now [ 1, 5, 4, 5 ])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock ints with 1, 2 with 3, 4, 5
+          ^         ^
+          |         +-- this 'with' is the binary addition operator
+          |
+          +------------ this 'with' is part of the array push syntax
+          
+(ints is now [ 1, 5, 4, 5 ])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Rockstar supports a special syntax for pushing poetic literals onto a queue:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="rockstar"><code>Rock the array like the poetic literal (the array is now [ 367 ])
+Rock the array like a wolf (the array is now [ 367, 14 ])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock the array like the poetic literal (the array is now [ 367 ])
+Rock the array like a wolf (the array is now [ 367, 14 ])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">This syntax is very useful for initialising strings without using string literals - see below. It also means that the following line is valid Rockstar:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock you like a hurricane (you is now [ 19 ])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock you like a hurricane (you is now [ 19 ])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h4 dir="auto"><a id="user-content-popping-elements-from-an-array" class="anchor" aria-hidden="true" href="#popping-elements-from-an-array"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Popping elements from an array</h4>
+<p dir="auto">The <code>roll</code> keyword will remove the first element from an array and return the element that was removed.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock ints with 1, 2, 3
+Roll ints (returns 1; ints is now [ 2, 3 ])
+Roll ints (returns 2; ints is now [ 3 ])
+Roll ints (returns 3; ints is now [] )
+Roll ints (returns mysterious; ints is now [])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock ints with 1, 2, 3
+Roll ints (returns 1; ints is now [ 2, 3 ])
+Roll ints (returns 2; ints is now [ 3 ])
+Roll ints (returns 3; ints is now [] )
+Roll ints (returns mysterious; ints is now [])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><code>roll</code> can be used in assignments:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock ints with 1, 2, 3
+Let the first be roll ints
+Let the second be roll ints
+Let the third be roll ints
+Shout the first (outputs 1)
+Shout the second (outputs 2)
+Shout the third (outputs 3)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock ints with 1, 2, 3
+Let the first be roll ints
+Let the second be roll ints
+Let the third be roll ints
+Shout the first (outputs 1)
+Shout the second (outputs 2)
+Shout the third (outputs 3)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Rockstar also supports a special <code>roll x into y</code> syntax for removing the first element from an array and assigning it to a variable:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Rock the list with 4, 5, 6
+Roll the list into foo
+Roll the list into bar
+Roll the list into baz
+Shout foo (will output 4)
+Shout bar (will output 5)
+Shout baz (will output 6)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Rock the list with 4, 5, 6
+Roll the list into foo
+Roll the list into bar
+Roll the list into baz
+Shout foo (will output 4)
+Shout bar (will output 5)
+Shout baz (will output 6)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 dir="auto"><a id="user-content-splitting-strings-and-type-conversions" class="anchor" aria-hidden="true" href="#splitting-strings-and-type-conversions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Splitting strings and type conversions</h3>
+<h4 dir="auto"><a id="user-content-a-note-about-mutations" class="anchor" aria-hidden="true" href="#a-note-about-mutations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>A note about mutations</h4>
+<p dir="auto">Some operations in Rockstar will either act in-place, modifying the variable passed to them, or will leave the
+source variable unmodified and place their output into a target variable. These operations are known as mutation
+operations, and they all have the following syntax:</p>
+<ul dir="auto">
+<li><code>Modify X</code> - acts in-place</li>
+<li><code>Modify X into Y</code> - leave <code>X</code> alone and put modified output into <code>Y</code></li>
+<li><code>Modify X with Z</code> - modify <code>X</code> in-place, with optional parameter <code>Z</code></li>
+<li><code>Modify X into Y with Z</code> - modify <code>X</code>, using parameter <code>Z</code>, and put results in <code>Y</code></li>
+</ul>
+<p dir="auto">Note that in-place mutations are <strong>only valid where the first argument is a variable</strong>:</p>
+<h4 dir="auto"><a id="user-content-splitting-strings" class="anchor" aria-hidden="true" href="#splitting-strings"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Splitting Strings</h4>
+<p dir="auto">To split a string in Rockstar, use the <code>cut</code> mutation (aliases <code>split</code> and <code>shatter</code>)</p>
+<p dir="auto">String splitting can either operate in-place, or place results into an output variable.
+You can specify an optional delimiter; if no delimiter is provided, the string is split
+into a character array.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Split "a,b,c" into the array (the array is ["a", ",", "b", ",", "c"])
+Split "a,b,c" into the array with "," (the array is ["a", "b", "c"])
+Split my string (my string will split in-place to an array of characters)
+Split my string with x (split my string in-place using the current value of x as a delimiter)
+
+Cut my life into pieces 
+  (split my life, put the resulting array in pieces)
+
+Cut your cake with my knife
+  (modify your cake in-place, by splitting it using my knife as a delimiter)
+
+Shatter my heart into pieces with your lies
+   (Split my heart, using your lies as a delimiter, and put the result into pieces)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Split &quot;a,b,c&quot; into the array (the array is [&quot;a&quot;, &quot;,&quot;, &quot;b&quot;, &quot;,&quot;, &quot;c&quot;])
+Split &quot;a,b,c&quot; into the array with &quot;,&quot; (the array is [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;])
+Split my string (my string will split in-place to an array of characters)
+Split my string with x (split my string in-place using the current value of x as a delimiter)
+
+Cut my life into pieces 
+  (split my life, put the resulting array in pieces)
+
+Cut your cake with my knife
+  (modify your cake in-place, by splitting it using my knife as a delimiter)
+
+Shatter my heart into pieces with your lies
+   (Split my heart, using your lies as a delimiter, and put the result into pieces)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">In-place string splitting is only valid when the first argument is a variable; the
+following would be invalid (because where would the result actually go?)</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="$"><code>Split "a,b,c,d,e" with "," (NOT VALID - nowhere to place the output)
+Split "a,b,c,d,e" into tokens with "," (valid - tokens now contains ["a","b","c","d","e"])
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Split &quot;a,b,c,d,e&quot; with &quot;,&quot; (NOT VALID - nowhere to place the output)
+Split &quot;a,b,c,d,e&quot; into tokens with &quot;,&quot; (valid - tokens now contains [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;])" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h4 dir="auto"><a id="user-content-joining-arrays" class="anchor" aria-hidden="true" href="#joining-arrays"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Joining Arrays</h4>
+<p dir="auto">To join an array in Rockstar, use the <code>join</code> mutation, or the alias <code>unite</code></p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Let the string be "abcde"
+Split the string into tokens
+Join tokens with ";"
+    (the tokens now contains "a;b;c;d;e")
+
+The input says hey now hey now now
+Split the input into words with " "
+Unite words into the output with "! "
+    (the output now contains "hey! now! hey! now! now!")
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let the string be &quot;abcde&quot;
+Split the string into tokens
+Join tokens with &quot;;&quot;
+    (the tokens now contains &quot;a;b;c;d;e&quot;)
+
+The input says hey now hey now now
+Split the input into words with &quot; &quot;
+Unite words into the output with &quot;! &quot;
+    (the output now contains &quot;hey! now! hey! now! now!&quot;)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h4 dir="auto"><a id="user-content-parsing-numbers-and-character-codes" class="anchor" aria-hidden="true" href="#parsing-numbers-and-character-codes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Parsing numbers and character codes</h4>
+<p dir="auto">Use the <code>cast</code> mutation (alias <code>burn</code>) to parse strings into numbers, or to convert numbers into their corresponding Unicode characters.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre lang="$rockstar"><code>Let X be "123.45"
+Cast X
+    (X now contains the numeric value 123.45)
+Let X be "ff"
+Cast X with 16
+    (X now contains the numeric value 255 - OxFF)
+Cast "12345" into result
+    (result now contains the number 12345)
+Cast "aa" into result with 16
+    (result now contains the number 170 - 0xAA)
+
+Cast 65 into result
+    (result now contains the string "A" - ASCII code 65)
+
+Cast 1046 into result
+    (result now contains the Cyrillic letter "Ж" - Unicode code point 1046)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Let X be &quot;123.45&quot;
+Cast X
+    (X now contains the numeric value 123.45)
+Let X be &quot;ff&quot;
+Cast X with 16
+    (X now contains the numeric value 255 - OxFF)
+Cast &quot;12345&quot; into result
+    (result now contains the number 12345)
+Cast &quot;aa&quot; into result with 16
+    (result now contains the number 170 - 0xAA)
+
+Cast 65 into result
+    (result now contains the string &quot;A&quot; - ASCII code 65)
+
+Cast 1046 into result
+    (result now contains the Cyrillic letter &quot;Ж&quot; - Unicode code point 1046)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 dir="auto"><a id="user-content-truthiness" class="anchor" aria-hidden="true" href="#truthiness"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Truthiness</h3>
+<p dir="auto">The results of comparisons often rely on a concept called 'truthiness'. If the value is truthy, it will be implicitly converted to true. If it is falsy, it will be implicitly converted to false.</p>
+<ul dir="auto">
+<li>Mysterious - Falsy</li>
+<li>Null - Falsy</li>
+<li>Boolean - Truthy if True, Falsy if False</li>
+<li>Number - If equal to zero, falsy. Otherwise, truthy.</li>
+<li>String - Truthy (null is the falsy equivalent)</li>
+</ul>
+<h3 dir="auto"><a id="user-content-constants-vs-keywords" class="anchor" aria-hidden="true" href="#constants-vs-keywords"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Constants vs Keywords</h3>
+<p dir="auto">Words that are used to construct a literal of a certain type are referred to as <strong>constants</strong> and words that are used to construct various syntax constructs are referred to as <strong>keywords</strong></p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mysterious</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>null</code></td>
+<td><code>nothing</code>, <code>nowhere</code>, <code>nobody</code>, <code>gone</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>right</code>, <code>yes</code>, <code>ok</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>wrong</code>, <code>no</code>, <code>lies</code></td>
+</tr>
+<tr>
+<td><code>empty</code></td>
+<td><code>silent</code>, <code>silence</code></td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto"><a id="user-content-literals-and-assignment" class="anchor" aria-hidden="true" href="#literals-and-assignment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Literals and Assignment</h3>
+<p dir="auto">String literals in Rockstar use double quotes.</p>
+<ul dir="auto">
+<li><code>"Hello San Francisco"</code></li>
+</ul>
+<p dir="auto">Numeric literals in Rockstar are written as decimal numbers</p>
+<ul dir="auto">
+<li><code>123</code></li>
+<li><code>3.141592654</code></li>
+</ul>
+<p dir="auto">Assignment is done using either <code>put &lt;expression&gt; into &lt;variable&gt;</code> or <code>let &lt;variable&gt; be &lt;expression&gt;</code>:</p>
+<ul dir="auto">
+<li><code>Put 123 into X</code> will assign the value <code>123</code> to the variable <code>X</code></li>
+<li><code>Put "Hello San Francisco" into the message</code> will assign the value <code>"Hello San Francisco"</code> to the variable <code>the message</code></li>
+<li><code>Let my balance be 1000000</code> will store the value <code>1000000</code> in the variable <code>my balance</code></li>
+<li><code>Let the survivors be the brave without the fallen</code> will subtract <code>the fallen</code> from <code>the brave</code> and store the result in <code>the survivors</code></li>
+</ul>
+<p dir="auto">The keyword <code>in</code> is an alias for <code>into</code>.</p>
+<h4 dir="auto"><a id="user-content-single-quotes" class="anchor" aria-hidden="true" href="#single-quotes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Single Quotes</h4>
+<p dir="auto">Given Rockstar's intriguing ancestral mixture of computer programming, creative English and idiomatic rock'n'roll, the single quote character presents all sorts of challenges.</p>
+<p dir="auto">Most programming languages use the single quote for quoting literal strings - <code>'like this'</code>. English, when written using the basic ASCII character set, often uses the single quote to stand in for the apostrophe to denote contractions or possessives - <code>you're, she's, he's, shouldn't, rock'n'roll</code>. Rock'n'roll uses the apostrophe apparently at random - <code>sweet child o' mine</code>, <code>ain't talkin' 'bout love</code>, <code>guns n' roses</code>.</p>
+<p dir="auto">Given three such dramatically different influences, here's how Rockstar interprets single quotes.</p>
+<ol dir="auto">
+<li>
+<p dir="auto">The sequence <code>'s</code> or <code>'re</code> appearing at the end of a word is equivalent to <code> is</code>, except when used in poetic literals.</p>
+<ul dir="auto">
+<li>This allows <code>Janie's got a gun</code> (initialises <code>Janie</code> with the value <code>313</code>) and <code>Union's been on strike</code> (initialises <code>Union</code> with the value <code>426</code>) as valid variable declarations. <code>We're here to see the show</code> initialises <code>We</code> with the value <code>42334</code>.</li>
+<li>You can also use <code>'s</code> and <code>'re</code> in comparisons: <code>If Janie's gone</code> tests whether <code>Janie</code> is <code>null</code>.</li>
+</ul>
+</li>
+<li>
+<p dir="auto">All other single quotes are then ignored. <code>ain't</code> is equivalent to <code>aint</code>, <code>wakin'</code> has five letters, and <code>'''''</code> is equal to the empty string. This means you can use single quotes freely throughout your program to punctuate, adjust word lengths and generally channel the spirit of rock'n'roll without worrying about compiler errors.</p>
+</li>
+</ol>
+<p dir="auto"><code>The fire's burning Tommy's feet</code> initialises <code>the fire</code> with the value <code>764</code>.</p>
+<h4 dir="auto"><a id="user-content-increment-and-decrement" class="anchor" aria-hidden="true" href="#increment-and-decrement"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Increment and Decrement</h4>
+<p dir="auto">Increment and decrement are supported by the <code>Build {variable} up</code> and <code>Knock {variable} down</code> statements. Adding more than one <code>up</code> or <code>down</code> in the statement will increment or decrement the same amount of times as you have <code>up</code>s or <code>down</code>s in the statement. There may be a comma between each <code>up</code> and <code>down</code>.</p>
+<ul dir="auto">
+<li><code>Build my world up</code> will increment the value stored in <code>my world</code> by 1.</li>
+<li><code>Knock the walls down</code> will decrement the value stored in <code>the walls</code> by 1</li>
+<li><code>Knock the walls down, down</code> will decrement the value stored in <code>the walls</code> by 2</li>
+</ul>
+<h4 dir="auto"><a id="user-content-operators" class="anchor" aria-hidden="true" href="#operators"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Operators</h4>
+<p dir="auto">Rockstar supports the infix arithmetic operators <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code>. The language includes aliases for each operator so you can write lyrically pleasing expressions.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Operation</th>
+<th>Aliases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>addition</td>
+<td><code>plus</code>, <code>with</code> .</td>
+</tr>
+<tr>
+<td>-</td>
+<td>subtraction</td>
+<td><code>minus</code>, <code>without</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td>multiplication</td>
+<td><code>times</code>, <code>of</code></td>
+</tr>
+<tr>
+<td>/</td>
+<td>division</td>
+<td><code>over</code>, <code>between</code></td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">The alias <code>by</code> has been explicitly rejected because of disagreements between the colloquial English <code>ten by four</code> (i.e. <code>10*4 = 40</code>) and <code>ten (divided) by four</code> (i.e. <code>10/4 = 2.5</code>)</p>
+<p dir="auto">Examples:</p>
+<ul dir="auto">
+<li>
+<p dir="auto"><code>Put the whole of your heart into my hands</code> - multiply <code>your heart</code> by <code>the whole</code> and assign the result to <code>my hands</code></p>
+</li>
+<li>
+<p dir="auto"><code>My world is nothing without your love</code> - Initialize <code>my world</code> with the result of subtracting <code>your love</code> from 0</p>
+</li>
+<li>
+<p dir="auto"><code>If the tears of a child are nothing</code> - check whether <code>the tears</code> * <code>a child</code> = 0</p>
+</li>
+<li>
+<p dir="auto"><code>My heart over the moon</code> - Returns <code>my heart</code> divided by <code>the moon</code></p>
+</li>
+</ul>
+<h4 dir="auto"><a id="user-content-compound-assignment-operators" class="anchor" aria-hidden="true" href="#compound-assignment-operators"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Compound Assignment Operators</h4>
+<p dir="auto">As in many C-style languages, Rockstar supports compound assignment operators, providing a terser syntax for storing the result of an operation. This is done using the <code>let</code> keyword.</p>
+<ul dir="auto">
+<li><code>Let X be with 10</code> - add <code>10</code> to <code>X</code> and store the result in <code>X</code>. (Equivalent to <code>X += 10</code>)</li>
+<li><code>Let the children be without fear</code> - subtract <code>fear</code> from <code>the children</code> and store the result in <code>the children</code></li>
+<li><code>Let my heart be over the moon</code> - equivalent to <code>my heart /= the moon</code></li>
+</ul>
+<h4 dir="auto"><a id="user-content-arithmetic-rounding" class="anchor" aria-hidden="true" href="#arithmetic-rounding"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Arithmetic Rounding</h4>
+<p dir="auto">Rounding in Rockstar is performed by the <code>turn</code> keyword. <code>Turn up</code> will round up (i.e. towards positive infinity), to the nearest integer; <code>turn down</code> will round down (towards negative infinity) to the nearest integer, and <code>turn round</code> will round to the nearest integer. Bonnie Tyler enthusiasts will be pleased to note that Rockstar accepts <code>turn around</code> as a valid alias.</p>
+<p dir="auto">Turn operations act in-place: they modify the variable directly, and will return the rounded value.</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>X is 1.2
+Turn up X
+Shout X (will print 2)
+
+X is 1.2
+Turn down X
+Shout X (will print 1)
+
+The radio's playing. The night has just begun. 
+ (initialises the radio with 7.35345)
+Turn up the radio
+Say the radio (will print 8)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="X is 1.2
+Turn up X
+Shout X (will print 2)
+
+X is 1.2
+Turn down X
+Shout X (will print 1)
+
+The radio's playing. The night has just begun. 
+ (initialises the radio with 7.35345)
+Turn up the radio
+Say the radio (will print 8)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Rounding supports variable <a href="#pronouns">pronouns</a>, so you can write phrases like:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>My heart is on fire. Aflame with desire.
+Turn it up.
+Shout it.
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="My heart is on fire. Aflame with desire.
+Turn it up.
+Shout it." tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">which will print the value 25 (obviously).</p>
+<h4 dir="auto"><a id="user-content-list-arithmetic" class="anchor" aria-hidden="true" href="#list-arithmetic"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>List Arithmetic</h4>
+<p dir="auto">Rockstar operators support a list of expressions on the right-hand side of the operator. (Imagine explaining in English that, say, "the restaurant bill is the food, plus the drinks, the service, and the tax" - same idea.)</p>
+<ul dir="auto">
+<li><code>Let X be 1 with 2, 3, 4</code> - shorthand for <code>X = 1 + 2 + 3 + 4</code></li>
+<li><code>Let X be "foo" with "bar", and "baz"</code> - X will be <code>"foo" + "bar" + "baz"</code></li>
+</ul>
+<p dir="auto">You can combine list arithmetic with compound assignment, as with this example:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>The wolf is hungry, out on the street (initialise the_wolf = 63236)
+Fear is the mind killer (fear = 346)
+Fury is the demon child (fury = 355)
+Hate is the only truth (hate = 345)
+Let the wolf be without fear, fury, and hate (the_wolf = the_wolf - 346 - 355 - 345) 
+Shout the wolf (output 62190)
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="The wolf is hungry, out on the street (initialise the_wolf = 63236)
+Fear is the mind killer (fear = 346)
+Fury is the demon child (fury = 355)
+Hate is the only truth (hate = 345)
+Let the wolf be without fear, fury, and hate (the_wolf = the_wolf - 346 - 355 - 345) 
+Shout the wolf (output 62190)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">List arithmetic is only possible where the result type supports further operations.</p>
+<ul dir="auto">
+<li><code>Let X be "foo" times 2, 2, 2</code> - OK; X is <code>"foofoofoofoofoofoofoofoo"</code></li>
+<li><code>Let X be 2 times "foo", "bar"</code> - is <code>mysterious</code> (because <code>2 * foo = "foofoo"</code>, and <code>"foofoo" * "bar"</code> is undefined)</li>
+</ul>
+<h4 dir="auto"><a id="user-content-poetic-literals" class="anchor" aria-hidden="true" href="#poetic-literals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Poetic Literals</h4>
+<p dir="auto">Rockstar also supports a unique language feature known as <strong>poetic literals</strong>. Inspired by the <a href="https://en.wikipedia.org/wiki/Here_document" rel="nofollow">here-document</a> syntax supported by many scripting languages, poetic literals allow the programmer to simultaneously initialize a variable and express their innermost angst.</p>
+<h5 dir="auto"><a id="user-content-poetic-constant-literals" class="anchor" aria-hidden="true" href="#poetic-constant-literals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Poetic Constant Literals</h5>
+<p dir="auto">A poetic constant literal is a single line consisting of a variable name, the <code>is</code> keyword, or the aliases <code>are</code>, <code>was</code> or <code>were</code>, and a constant signifying the value the variable will be set to.</p>
+<ul dir="auto">
+<li><code>My heart is true</code> - initialises the variable <code>my heart</code> with the Boolean value <code>true</code></li>
+<li><code>Tommy is nobody</code> - initialises the variable <code>Tommy</code> with the value <code>null</code> using the <code>nobody</code> alias</li>
+<li><code>Tommy is mysterious</code> - initialises the variable <code>Tommy</code> with the value <code>mysterious</code>.</li>
+</ul>
+<h5 dir="auto"><a id="user-content-poetic-string-literals" class="anchor" aria-hidden="true" href="#poetic-string-literals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Poetic String Literals</h5>
+<p dir="auto">A poetic string literal assignment starts with a variable name, followed by one of the keywords <code>say</code>, <code>says</code> or <code>said</code> followed by a single space. The rest of the line up to the <code>\n</code> terminator is treated as an unquoted string literal.</p>
+<ul dir="auto">
+<li><code>Peter says Hello San Francisco!\n</code> will initialise the variable <code>Peter</code> with the string literal <code>"Hello San Francisco!"</code>.</li>
+<li><code>San Francisco says Hello back\n</code> will initialise the variable <code>San Francisco</code> with the string literal <code>Hello back</code>.</li>
+<li><code>You say I'm no good for you\n</code> will initialise the variable <code>You</code> with the string literal <code>I'm no good for you</code>.</li>
+<li><code>My parents said we'd never make it\n</code> will initialise the variable <code>My parents</code> with the string literal <code>we'd never make it</code>.</li>
+</ul>
+<h4 dir="auto"><a id="user-content-poetic-number-literals" class="anchor" aria-hidden="true" href="#poetic-number-literals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Poetic Number Literals</h4>
+<p dir="auto">A poetic number literal begins with a variable name, followed by the keyword <code>is</code>, or the aliases <code>are</code>, <code>was</code> or <code>were</code>. As long as the next symbol is not a Literal Word, the rest of the line is treated as a decimal number in which the values of consecutive digits are given by the lengths of the subsequent barewords, up until the end of the line. To allow the digit zero, and to compensate for a lack of suitably rock'n'roll 1- and 2-letter words, word lengths are parsed modulo 10. A period (.) character denotes a decimal place. Other than the first period, any non-alphabetical characters are ignored.</p>
+<ul dir="auto">
+<li><code>Tommy was a lovestruck ladykiller</code> initialises <code>Tommy</code> with the value <code>100</code></li>
+<li><code>Sweet Lucy was a dancer</code> - initialises <code>Sweet Lucy</code> with the value 16</li>
+<li><code>A killer is on the loose</code> - initialises <code>a killer</code> with the value 235.</li>
+<li><code>My dreams were ice. A life unfulfilled; wakin' everybody up, taking booze and pills</code> - initialises <code>my dreams</code> with the value <code>3.1415926535</code></li>
+<li><code>Tommy was without</code> initialises <code>Tommy</code> with the value <code>7</code> because <code>without</code> is a Reserved Keyword, but not a Literal Word.</li>
+<li>Note that poetic literals <strong>can</strong> include Reserved Keywords, as with <code>taking</code> in this example.</li>
+<li>The hyphen (<code>-</code>) is counted as a letter – so you can use terms like 'all-consuming' (13 letters &gt; 3) and
+'power-hungry' (12 letters &gt; 2) instead of having to think of 12- and 13-letter words.</li>
+<li>The semi-colon, comma, apostrophe and any other non-alphabetical characters are ignored.</li>
+</ul>
+<h3 dir="auto"><a id="user-content-comparison" class="anchor" aria-hidden="true" href="#comparison"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Comparison</h3>
+<p dir="auto">Similar to the single-equals operator in Visual Basic and some scripting languages, the <code>is</code> keyword in Rockstar is interpreted differently depending whether it appears as part of a statement or as part of an expression. <code>isn't</code> is the logical negation of the <code>is</code> keyword.</p>
+<p dir="auto">Comparison in Rockstar can only be done within an expression.</p>
+<ul dir="auto">
+<li><code>Tommy is nobody</code> initialises the variable <code>Tommy</code> with the value <code>nobody</code></li>
+<li><code>If Tommy is nobody</code> - will execute the following block if, and only if, the variable <code>Tommy</code> is equal to <code>nobody</code></li>
+</ul>
+<p dir="auto">Comparison can also be done with any alias of <code>is</code>:</p>
+<ul dir="auto">
+<li><code>If he's gone</code></li>
+<li><code>If we are the future</code></li>
+<li><code>If the cat was mysterious</code></li>
+<li><code>If dreams were real</code></li>
+</ul>
+<p dir="auto">The keyword <code>ain't</code> (which is reduced to <code>aint</code> by Rockstar) is an alias for <code>isn't</code>. This usage runs contrary to idiomatic English, where "Tommy isn't anybody", "Tommy ain't nobody" and "Tommy ain't not nobody" somehow mean exactly the same thing.</p>
+<p dir="auto"><code>aren't</code>, <code>wasn't</code>, and <code>weren't</code> are also aliases for <code>isn't</code>.</p>
+<p dir="auto">Rockstar also supports the following comparison syntax:</p>
+<ul dir="auto">
+<li><code>is higher/greater/bigger/stronger than</code> to denote 'greater than'</li>
+<li><code>is lower/less/smaller/weaker than</code> to denote 'less than'</li>
+<li><code>is as high/great/big/strong as</code> to denote 'greater than or equal to'</li>
+<li><code>is as low/little/small/weak as</code> to denote 'less than or equal to'</li>
+</ul>
+<h3 dir="auto"><a id="user-content-logical-operations" class="anchor" aria-hidden="true" href="#logical-operations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Logical Operations</h3>
+<p dir="auto">Rockstar has 4 different logical operators that first convert their operand(s) to a boolean by truthiness.</p>
+<ul dir="auto">
+<li><code>A and B</code> returns the <a href="https://en.wikipedia.org/wiki/AND_gate" rel="nofollow">Conjunction</a></li>
+<li><code>A or B</code> returns the <a href="https://en.wikipedia.org/wiki/OR_gate" rel="nofollow">Disjunction</a></li>
+<li><code>A nor B</code> returns the <a href="https://en.wikipedia.org/wiki/NOR_gate" rel="nofollow">Joint Denial</a></li>
+<li><code>not A</code> returns the <a href="https://en.wikipedia.org/wiki/Inverter_(logic_gate)" rel="nofollow">Negation</a> of its single argument.</li>
+</ul>
+<p dir="auto">All logical operators are short circuiting. This means if evaluating the first argument to the operator guarantees a result, the other argument is not evaluated. <code>false and 1 over 0</code> is <code>false</code> and does not produce an error for dividing by zero.</p>
+<h3 dir="auto"><a id="user-content-inputoutput" class="anchor" aria-hidden="true" href="#inputoutput"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Input/Output</h3>
+<p dir="auto">Use the <code>Listen</code> keyword to read one line of input from <code>STDIN</code>. Use <code>Listen to</code> to capture the input into a named variable.</p>
+<ul dir="auto">
+<li><code>Listen to your heart</code> - read one line of input from <code>STDIN</code> and store it in <code>your heart</code></li>
+</ul>
+<p dir="auto">Use the <code>Say</code> keyword to write the value of a variable to <code>STDOUT</code>.</p>
+<ul dir="auto">
+<li><code>Say Tommy</code> - will output the value stored in <code>Tommy</code> to <code>STDOUT</code></li>
+</ul>
+<p dir="auto">Rockstar defines <code>Shout</code>, <code>Whisper</code> and <code>Scream</code> as aliases for <code>Say</code></p>
+<p dir="auto">The following examples all use c style syntax for explaining what things do.</p>
+<h3 dir="auto"><a id="user-content-types-continued" class="anchor" aria-hidden="true" href="#types-continued"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Types Continued</h3>
+<h4 dir="auto"><a id="user-content-operator-precedence" class="anchor" aria-hidden="true" href="#operator-precedence"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Operator Precedence</h4>
+<p dir="auto">The higher, the tighter the binding. This is the precedence we generally expect from our math.</p>
+<ol dir="auto">
+<li>Function Call (greedy arguments)</li>
+<li>Logical NOT (right-associative)</li>
+<li>Multiplication and Division (left-associative)</li>
+<li>Addition and Subtraction (left-associative)</li>
+<li>Comparison operators (left-associative)</li>
+<li><code>and</code>, <code>or</code>, and <code>nor</code> (left-associative)</li>
+</ol>
+<h5 dir="auto"><a id="user-content-examples" class="anchor" aria-hidden="true" href="#examples"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Examples</h5>
+<ul dir="auto">
+<li><code>A taking B times C plus not D times E and F</code> is equivalent to <code>((A(B) * C) + (!D * E)) &amp;&amp; F</code></li>
+</ul>
+<h4 dir="auto"><a id="user-content-binary-comparison" class="anchor" aria-hidden="true" href="#binary-comparison"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Binary Comparison</h4>
+<p dir="auto">Equality comparisons (<code>is</code>, <code>ain't</code>, <code>is not</code>) are allowed between types if they are the same type or they can be compared by the rules below. Two arrays are equal if their elements are equal.</p>
+<p dir="auto">Ordering comparisons (<code>is higher than</code>, <code>is lower than</code>, <code>is as high as</code>, and <code>is as low as</code>) are only allowed if the operands are both Numbers or both Strings or they are converted to such an arrangement according to the rules below. Numbers are compared as expected. Strings are compared lexicographically.</p>
+<ul dir="auto">
+<li>&lt;Mysterious&gt; &lt;op&gt; Mysterious =&gt; Equal.</li>
+<li>&lt;Non-Mysterious&gt; &lt;op&gt; Mysterious =&gt; Non equal.</li>
+<li>String &lt;op&gt; Number =&gt; Convert the string to a number using base 10 with leading zeros ignored. If it fails, return false.</li>
+<li>String &lt;op&gt; Boolean =&gt; Convert the string to a boolean. The empty string is false; all other strings are true.</li>
+<li>String &lt;op&gt; Null =&gt; Non equal.</li>
+<li>Number &lt;op&gt; Boolean =&gt; Convert number to boolean by "truthiness".</li>
+<li>Number &lt;op&gt; Null =&gt; Convert null to 0.</li>
+<li>Boolean &lt;op&gt; Null =&gt; Convert null to false.</li>
+</ul>
+<h5 dir="auto"><a id="user-content-examples-1" class="anchor" aria-hidden="true" href="#examples-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Examples</h5>
+<ul dir="auto">
+<li><code>"1" is 1</code> evaluates to true because <code>"1"</code> gets converted to the number <code>1</code></li>
+<li><code>"2" ain't Mysterious</code> evaluates to true because all types are non equal to mysterious, besides mysterious itself.</li>
+<li><code>"02" &lt; "10"</code> is true because the lexicographical comparison between <code>0</code> and <code>1</code> shows that the first string is less than the second string.</li>
+<li><code>True &lt; 10</code> is an error because <code>10</code> gets coerced into <code>True</code> due to the comparison with a boolean and there are no allowed ordering comparisons between booleans.</li>
+</ul>
+<h4 dir="auto"><a id="user-content-increment-and-decrement-operators" class="anchor" aria-hidden="true" href="#increment-and-decrement-operators"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Increment and Decrement Operators</h4>
+<ul dir="auto">
+<li>&lt;op&gt; String =&gt; Error</li>
+<li>&lt;op&gt; Boolean =&gt; Invert Boolean</li>
+<li>&lt;op&gt; Null =&gt; coerce to zero (<code>My world is nothing / build my world up</code> can be used to initialise a counter loop, for example.)</li>
+<li>&lt;op&gt; Mysterious =&gt; Error</li>
+</ul>
+<h4 dir="auto"><a id="user-content-binary-operators" class="anchor" aria-hidden="true" href="#binary-operators"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Binary Operators</h4>
+<p dir="auto">Conversions other than those listed are errors.</p>
+<ul dir="auto">
+<li>String &lt;plus&gt; Number =&gt; Convert the number to a base-10 string, retaining all precision, but removing unnecessary digits. A leading zero is considered necessary for numbers with no whole part, eg. <code>00.1000</code> gets serialized to <code>0.1</code></li>
+<li>String &lt;plus&gt; Boolean =&gt; Convert the boolean to <code>true</code> or <code>false</code></li>
+<li>String &lt;plus&gt; Null =&gt; Convert the null to <code>"null"</code></li>
+<li>String &lt;plus&gt; Mysterious =&gt; Convert the mysterious to <code>"mysterious"</code></li>
+<li>String &lt;times&gt; Number =&gt; String gets repeated &lt;Number&gt; times</li>
+</ul>
+<h3 dir="auto"><a id="user-content-flow-control-and-block-syntax" class="anchor" aria-hidden="true" href="#flow-control-and-block-syntax"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Flow Control and Block Syntax</h3>
+<h4 dir="auto"><a id="user-content-conditionals" class="anchor" aria-hidden="true" href="#conditionals"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Conditionals</h4>
+<p dir="auto">Conditional expressions start with the <code>If</code> keyword, followed by an expression. If the expression evaluates to <code>true</code>, then the subsequent code block is executed. Optionally, an <code>Else</code> block can be written after an <code>If</code> block. The code block following the <code>Else</code> keyword would be executed if the <code>If</code> expression evaluated to <code>false</code>.</p>
+<p dir="auto">For the purpose of conditional expressions, 0, <code>mysterious</code>, <code>null</code>, <code>false</code>, and the empty string all evaluate to <code>false</code>, and everything else to <code>true</code>.</p>
+<h4 dir="auto"><a id="user-content-loops" class="anchor" aria-hidden="true" href="#loops"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Loops</h4>
+<p dir="auto">Similar to the <code>If</code> statement, a loop is denoted by the <code>While</code> or <code>Until</code> keyword, which will cause the subsequent code block to be executed repeatedly whilst the expression is satisfied:</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Tommy was a dancer
+While Tommy ain't nothing,
+Knock Tommy down
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Tommy was a dancer
+While Tommy ain't nothing,
+Knock Tommy down" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">That'll initialize Tommy with the value 16 (using the poetic number literal syntax) and then loop, decrementing Tommy by 1 each time until Tommy equals zero (i.e <code>ain't nothing</code> returns false).</p>
+<p dir="auto">The <code>break</code> and <code>continue</code> statements work as they do in most block-based languages. Rockstar defines <code>Break it down</code> as an alias for <code>break</code> and <code>Take it to the top</code> as an alias for <code>continue</code></p>
+<h4 dir="auto"><a id="user-content-blocks" class="anchor" aria-hidden="true" href="#blocks"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Blocks</h4>
+<p dir="auto">A block in Rockstar starts with an <code>If</code>, <code>Else</code>, <code>While</code> or <code>Until</code> statement, and is terminated by a blank line or the end-of-file. EOF ends all open code blocks</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>Tommy was a dancer
+While Tommy ain't nothing
+Shout it
+Knock it down
+
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="Tommy was a dancer
+While Tommy ain't nothing
+Shout it
+Knock it down
+" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h3 dir="auto"><a id="user-content-functions" class="anchor" aria-hidden="true" href="#functions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Functions</h3>
+<p dir="auto">Functions are declared with a variable name followed by the <code>takes</code> keyword (alias <code>wants</code>) and a list of arguments separated by one of the following: <code>and</code> <code>,</code> <code>&amp;</code> <code>, and</code> <code>'n'</code></p>
+<ul dir="auto">
+<li><code>Multiply takes X and Y</code></li>
+<li><code>Search takes Needle and Haystack</code></li>
+<li><code>Polly wants a cracker</code></li>
+</ul>
+<p dir="auto">The function body is a list of statements with no separating blank lines. A blank line denotes the end of a function body. Functions in Rockstar always have a return value, specified by the <code>return</code> keyword and its aliases <code>give</code> and <code>send</code>. For historical reasons, <code>give back</code> is also supported as an alias for <code>return</code>, and the return statement can be followed by the keyword <code>back</code> (which has no effect but can make code more lyrical).</p>
+<div class="snippet-clipboard-content position-relative overflow-auto"><pre><code>(This function adds 9 to its input and returns the result)
+Polly wants a cracker
+Cheese is delicious
+Put a cracker with cheese into your mouth
+Give it back
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="(This function adds 9 to its input and returns the result)
+Polly wants a cracker
+Cheese is delicious
+Put a cracker with cheese into your mouth
+Give it back" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+    <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none m-2">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto">Functions are called using the 'taking' keyword and must have at least one argument. Multiple arguments are separated with one of the following: <code>,</code> <code>&amp;</code> <code>, and</code> <code>'n'</code>.</p>
+<p dir="auto">Arguments may be any valid expression, including literals, arithmetic expressions and function calls.</p>
+<ul dir="auto">
+<li><code>Multiply taking 3, 5</code> is an expression returning (presumably) 15</li>
+<li><code>Search taking "hands", "lay your hands on me"</code></li>
+<li><code>Put Multiply taking 3, 5, and 9 into Large</code> will set Large to <code>3 * 5 * 9</code> <strong>NOT</strong> <code>(3 * 5) &amp;&amp; 9</code>.</li>
+</ul>
+</article>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end abouts -->
+
+
+
+
+
+
+
+
+    <!--  footer -->
+    <footer>
+      <div class="footer ">       
+            <div class="container">
+              <div class="copyright">
+               
+                  <p>Copyright 2022 All Right Reserved By <a href="https://github.com/gaborsch">Gabor Schermann</a></p>
+                  <!-- Site Template from https://html.design/ Free html Templates-->
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- end footer -->
+          <!-- Javascript files-->
+          <script src="js/jquery.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.bundle.min.js"></script>
+          <script src="js/jquery-3.0.0.min.js"></script>
+          <script src="js/plugin.js"></script>
+          <!-- sidebar -->
+          <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="js/custom.js"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+
+
+</body>
+
+</html>
