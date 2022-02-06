@@ -137,8 +137,9 @@
       	Some examples:
       	<div class="button-rounded">      		
       	<a onClick="copy_source('fizzbuzz');">Fizzbuzz</a>
+      	<a onClick="copy_source('fizzbuzz2');">Fizzbuzz 2</a>
       	<a onClick="copy_source('99beers');">99 Beers</a>
-      	<a onClick="copy_source('multpers');">Persistence</a>
+      	<a onClick="copy_source('primes');">Primes w/ input</a>
       	</div>
       </div>
     </div>
@@ -194,6 +195,153 @@
 
 	function output(string) {
 		document.getElementById('program_output').value = string + '\n';
+	}
+	
+	function copy_source(t) {
+		var e = window.editor;
+		if (t=='fizzbuzz') {
+			e.setValue('\
+Midnight takes your heart and your soul \n\
+While your heart is as high as your soul \n\
+Put your heart without your soul into your heart \n\
+\n\
+Give back your heart \n\
+\n\
+Desire is a lovestruck ladykiller \n\
+My world is nothing  \n\
+Fire is ice \n\
+Hate is water \n\
+Until my world is Desire, \n\
+Build my world up \n\
+If Midnight taking my world, Fire is nothing and Midnight taking my world, Hate is nothing \n\
+Shout "FizzBuzz!" \n\
+Take it to the top \n\
+\n\
+If Midnight taking my world, Fire is nothing \n\
+Shout "Fizz!" \n\
+Take it to the top \n\
+\n\
+If Midnight taking my world, Hate is nothing \n\
+Say "Buzz!" \n\
+Take it to the top\n\
+\n\
+Whisper my world\n'
+			);			
+		} else if (t=='fizzbuzz2') {
+			e.setValue('\
+Eternity takes the pain.\n\
+The prize is silence\n\
+Until the pain is nothing,\n\
+Roll the pain into violence,\n\
+Cast violence into your lies,\n\
+Let the prize be with your lies.\n\
+\n\
+Give back the prize\n\
+\n\
+Midnight takes your heart and your soul\n\
+While your heart is as high as your soul\n\
+Put your heart without your soul into your heart\n\
+\n\
+Give back your heart\n\
+\n\
+My dreams are diamond nightmares\n\
+My suffering is the sea\n\
+My screams are hollow hatred\n\
+Your love is meaningless to me\n\
+\n\
+Rock my dreams like a razorblade smile\n\
+Rock my dreams with your love, your love\n\
+Rock my screams like a switchblade missile\n\
+Rock my screams with your love, your love.\n\
+\n\
+Cast my suffering into starlight\n\
+Let surrender be eternity taking my dreams\n\
+Let salvation be eternity taking my screams\n\
+\n\
+Desire is a lovestruck ladykiller\n\
+My world is nothing\n\
+Fire is ice\n\
+Hate is water\n\
+Until my world is desire,\n\
+Build my world up\n\
+If midnight taking my world, fire is nothing and midnight taking my world, hate is nothing\n\
+Shout surrender with salvation with starlight\n\
+Take it to the top\n\
+\n\
+If midnight taking my world, fire is nothing\n\
+Shout surrender with starlight\n\
+Take it to the top\n\
+\n\
+If midnight taking my world, hate is nothing\n\
+Shout salvation with starlight\n\
+Take it to the top\n\
+\n\
+Whisper my world\n'
+			);			
+		} else  if (t=='99beers') {
+			e.setValue('\
+Your heart says  bottles of beer on the wall\n\
+Your soul says  bottles of beer\n\
+Carol says Take one down, pass it around\n\
+The beers were numbering fa\'too\'many\n\
+While the beers ain\'t nothing\n\
+Say it with your heart\n\
+Say it with your soul\n\
+Say Carol,\n\
+Knock the beers down\n\
+Say it with your heart\n'
+			);
+	} else if (t=='primes') {
+		e.setValue('\
+Midnight takes your heart and your soul\n\
+While your heart is as high as your soul\n\
+Put your heart without your soul into your heart\n\
+\n\
+Give back your heart\n\
+\n\
+This Life takes my hopes and my dreams\n\
+While my dreams ain\'t gone\n\
+Let my love be my dreams\n\
+Put Midnight taking my hopes \'n\' my dreams into my mind\n\
+Put my mind into my dreams\n\
+Put my love into my hopes\n\
+\n\
+Give back my hopes\n\
+\n\
+This Love takes my hand\n\
+My heart was up\n\
+My love was true\n\
+Let your heart be my hand\n\
+If Midnight taking your heart \'n\' my heart is empty and my hand without my heart is not empty\n\
+My love was lies\n\
+Give back my love \n\
+\n\
+Put my hand over my heart into my hand\n\
+While my hand without my heart is bigger than nothing\n\
+Put This Life taking your heart \'n\' my heart into the world\n\
+Knock the world down\n\
+If the world ain\'t nothing\n\
+My love was lies\n\
+Break it down\n\
+\n\
+Build my heart up\n\
+\n\
+Give back my love\n\
+\n\
+\n\
+Listen to my voice\n\
+My mind is gone\n\
+Build my mind up\n\
+Build my mind up\n\
+Until my mind is as strong as my voice\n\
+If This Love taking my mind ain\'t gone\n\
+Shout my mind\n\
+\n\
+Build my mind up\n'
+		);			
+	} 
+		
+		
 	}
 
 </script>
