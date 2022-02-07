@@ -1579,6 +1579,14 @@ text-align: center;}
 	transition: all 0.3s ease-in;
  }
 
+span.function-link a {
+	padding-left: 20px;
+}
+span.function-link a:hover {
+	color: #0ed1f0;
+	text-decoration: underline;
+}
+
 /* Specification HTML rules */
 article svg.octicon, article .zeroclipboard-container {
 	display: none

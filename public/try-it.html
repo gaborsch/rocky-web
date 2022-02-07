@@ -125,11 +125,17 @@
       	Input of the program:
       	<textarea class="codestyle" rows="3" cols="80" id="program_input" style="width: 100%"></textarea>
       </div>
-      <div class="button-rounded col-xl-2 col-lg-2 col-md-12 col-sm-12">
-      	<a onClick="run();">Run!</a>
-      </div>
-    
-	    Output of the program:
+      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12">
+	      <div class="button-rounded">
+	      	<a onClick="run();">Run!</a>
+	      </div>
+      	<span class="function-link">
+      		<a tabindex="" onClick="list();">List</a>
+      		<a tabindex="" onClick="explain();">Explain</a>
+      	</span>
+      </div>    
+	    <span style="padding-left: 16px;">Output of the program:</span> 
+	    <span class="function-link"><a tabindex="" onClick="output('');">Clear output</a></span>
       	<textarea class="codestyle" rows="5" cols="80" id="program_output" style="width: 100%"></textarea>
       </div>
       
@@ -177,7 +183,7 @@
 	function run() {
 		var src = window.editor.getValue();
 		var inp = $("#program_input")[0].value;
-		$.ajax({
+		$.post({
 			url : "/execute",
 			data: {
 				'src': src,
@@ -193,9 +199,45 @@
 		});
 	}
 
-	function output(string) {
-		document.getElementById('program_output').value = string + '\n';
+	function list() {
+		var src = window.editor.getValue();
+		$.post({
+			url : "/list",
+			data: {
+				'src': src
+			},
+			success : function(data, textStatus, jqXHR) {
+				output(data);
+			},
+		    error: function(jqXHR, textStatus, errorThrown)
+		    {
+		        alert("Error"); 
+		    }
+		});
 	}
+	
+	function explain() {
+		var src = window.editor.getValue();
+		$.post({
+			url : "/explain",
+			data: {
+				'src': src
+			},
+			success : function(data, textStatus, jqXHR) {
+				output(data);
+			},
+		    error: function(jqXHR, textStatus, errorThrown)
+		    {
+		        alert("Error"); 
+		    }
+		});
+	}
+
+	function output(string) {
+		document.getElementById('program_output').value = string;
+	}
+	
+	
 	
 	function copy_source(t) {
 		var e = window.editor;
@@ -302,7 +344,7 @@ Give back your heart\n\
 This Life takes my hopes and my dreams\n\
 While my dreams ain\'t gone\n\
 Let my love be my dreams\n\
-Put Midnight taking my hopes \'n\' my dreams into my mind\n\
+Put Midnight taking my hopes, my dreams into my mind\n\
 Put my mind into my dreams\n\
 Put my love into my hopes\n\
 \n\
@@ -312,13 +354,13 @@ This Love takes my hand\n\
 My heart was up\n\
 My love was true\n\
 Let your heart be my hand\n\
-If Midnight taking your heart \'n\' my heart is empty and my hand without my heart is not empty\n\
+If Midnight taking your heart, my heart is empty and my hand without my heart is not empty\n\
 My love was lies\n\
 Give back my love \n\
 \n\
 Put my hand over my heart into my hand\n\
 While my hand without my heart is bigger than nothing\n\
-Put This Life taking your heart \'n\' my heart into the world\n\
+Put This Life taking your heart, my heart into the world\n\
 Knock the world down\n\
 If the world ain\'t nothing\n\
 My love was lies\n\
@@ -337,13 +379,10 @@ Until my mind is as strong as my voice\n\
 If This Love taking my mind ain\'t gone\n\
 Shout my mind\n\
 \n\
-Build my mind up\n'
-		);			
-	} 
-		
-		
-	}
+Build my mind up\n');
+		}
 
+	}
 </script>
 
 
