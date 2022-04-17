@@ -1,7 +1,6 @@
 package rockstar.web;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.CharArrayWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,9 +8,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.net.http.HttpRequest;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,11 +19,8 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import rockstar.Rockstar;
 import rockstar.RockstarApi;
-import rockstar.parser.Parser;
 import rockstar.runtime.Environment;
-import rockstar.statement.Program;
 
 public final class RockstarHandler extends AbstractHandler {
 	private static final String PARAMETER_INP = "inp";
@@ -68,7 +62,7 @@ public final class RockstarHandler extends AbstractHandler {
 		}
 
 	}
-	
+
 	private String run(String source, String input) throws IOException {
 		RockstarApi api = new RockstarApi();
 
@@ -81,35 +75,35 @@ public final class RockstarHandler extends AbstractHandler {
 		return outWriter.toString();
 	}
 
-    public String list(String fileContent) {
+	public String list(String fileContent) {
 		RockstarApi api = new RockstarApi();
 
 		CharArrayWriter outWriter = new CharArrayWriter();
 		api.setEnv(createEnvironment(outWriter));
 
 		return api.list(PROGRAM_NAME_ROCKSTAR, fileContent);
-    }
+	}
 
-    public String explain(String fileContent) {
+	public String explain(String fileContent) {
 		RockstarApi api = new RockstarApi();
 
 		CharArrayWriter outWriter = new CharArrayWriter();
 		api.setEnv(createEnvironment(outWriter));
-		
+
 		return api.explain(PROGRAM_NAME_ROCKSTAR, fileContent);
-    }
+	}
 
 	private Environment createEnvironment(Writer output) {
 		OutputStream outStream = new WriterOutputStream(output, StandardCharsets.UTF_8.name());
 		// no input, error is redirected to output
 		return createEnvironment("", outStream, outStream);
-    }
+	}
 
 	private Environment createEnvironment(String input, Writer output) {
 		OutputStream outStream = new WriterOutputStream(output, StandardCharsets.UTF_8.name());
 		// error is redirected to output
 		return createEnvironment(input, outStream, outStream);
-    }
+	}
 
 	private Environment createEnvironment(String input, OutputStream output, OutputStream error) {
 		InputStream is = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
@@ -118,5 +112,5 @@ public final class RockstarHandler extends AbstractHandler {
 		Map<String, String> options = new HashMap<>();
 		options.put("--disable-native-java", "--disable-native-java");
 		return Environment.create(is, opw, epw, options);
-	}    
+	}
 }
