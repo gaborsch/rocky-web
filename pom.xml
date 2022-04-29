@@ -47,7 +47,8 @@
 					</execution>
 				</executions>
 			</plugin>
-<!--		<plugin>
+			<!--
+			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
@@ -81,7 +82,8 @@
 					</execution>
 				</executions>
 			</plugin>
--->	
+-->
+			<!--
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-assembly-plugin</artifactId>
@@ -93,11 +95,9 @@
 			            </goals>
 			            <configuration>
 			                <archive>
-			                <manifest>
-			                    <mainClass>
-						        	rockstar.web.Main
-			                    </mainClass>
-			                </manifest>
+				                <manifest>
+				                    <mainClass>rockstar.web.Main</mainClass>
+				                </manifest>
 			                </archive>
 			                <descriptorRefs>
 			                    <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -105,6 +105,26 @@
 			            </configuration>
 			        </execution>
 			    </executions>
+			</plugin>
+-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>rockstar.web.Main</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -118,19 +138,19 @@
 				<version>5.8.2</version>
 			</dependency>
 			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>javax.servlet-api</artifactId>
-			    <version>4.0.1</version>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>4.0.1</version>
 			</dependency>
 			<dependency>
-			  <groupId>org.eclipse.jetty</groupId>
-			  <artifactId>jetty-server</artifactId>
-			  <version>11.0.7</version>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-server</artifactId>
+				<version>11.0.7</version>
 			</dependency>
 			<dependency>
-			  <groupId>rockstarlang</groupId>
-			  <artifactId>rocky</artifactId>
-			  <version>2.1.0-SNAPSHOT</version>
+				<groupId>rockstarlang</groupId>
+				<artifactId>rocky</artifactId>
+				<version>2.1.0-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -145,23 +165,23 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
-		</dependency>		
-		<dependency>
-		  <groupId>org.eclipse.jetty</groupId>
-		  <artifactId>jetty-server</artifactId>
 		</dependency>
 		<dependency>
-		  <groupId>rockstarlang</groupId>
-		  <artifactId>rocky</artifactId>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>rockstarlang</groupId>
+			<artifactId>rocky</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 	<distributionManagement>
-	   <repository>
-	     <id>rocky-github</id>
-	     <name>GitHub gaborsch Apache Maven Packages</name>
-	     <url>https://maven.pkg.github.com/gaborsch/rocky</url>
-	   </repository>
-	</distributionManagement>	
-	
+		<repository>
+			<id>rocky-github</id>
+			<name>GitHub gaborsch Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/gaborsch/rocky</url>
+		</repository>
+	</distributionManagement>
+
 </project>
