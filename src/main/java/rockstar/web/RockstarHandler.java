@@ -20,6 +20,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import rockstar.RockstarApi;
+import rockstar.parser.ParseException;
 import rockstar.runtime.Environment;
 
 public final class RockstarHandler extends AbstractHandler {
@@ -33,32 +34,49 @@ public final class RockstarHandler extends AbstractHandler {
 			throws IOException, ServletException {
 
 		String path = baseRequest.getPathInContext();
+		
+		//log("Request path: "+path);
 
-		if (path.startsWith("/execute")) {
+		try {
+			if (path.startsWith("/execute")) {
+				response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
+				response.setStatus(HttpServletResponse.SC_OK);
+				baseRequest.setHandled(true);
+				String source = request.getParameter(PARAMETER_SRC);
+				String input = request.getParameter(PARAMETER_INP);
+				String output = run(source, input != null ? input : "");
+				PrintWriter writer = response.getWriter();
+				writer.println(output);
+			} else if (path.startsWith("/list")) {
+				response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
+				response.setStatus(HttpServletResponse.SC_OK);
+				baseRequest.setHandled(true);
+				String source = request.getParameter(PARAMETER_SRC);
+				String output = list(source);
+				PrintWriter writer = response.getWriter();
+				writer.println(output);
+			} else if (path.startsWith("/explain")) {
+				response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
+				response.setStatus(HttpServletResponse.SC_OK);
+				baseRequest.setHandled(true);
+				String source = request.getParameter(PARAMETER_SRC);
+				String output = explain(source);
+				PrintWriter writer = response.getWriter();
+				writer.println(output);
+			}
+		} catch (ParseException e) {
 			response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
 			response.setStatus(HttpServletResponse.SC_OK);
 			baseRequest.setHandled(true);
-			String source = request.getParameter(PARAMETER_SRC);
-			String input = request.getParameter(PARAMETER_INP);
-			String output = run(source, input != null ? input : "");
 			PrintWriter writer = response.getWriter();
-			writer.println(output);
-		} else if (path.startsWith("/list")) {
+			writer.println(e.getMessage());
+		} catch (Exception e) {
 			response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
 			response.setStatus(HttpServletResponse.SC_OK);
 			baseRequest.setHandled(true);
-			String source = request.getParameter(PARAMETER_SRC);
-			String output = list(source);
 			PrintWriter writer = response.getWriter();
-			writer.println(output);
-		} else if (path.startsWith("/explain")) {
-			response.setContentType(CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8);
-			response.setStatus(HttpServletResponse.SC_OK);
-			baseRequest.setHandled(true);
-			String source = request.getParameter(PARAMETER_SRC);
-			String output = explain(source);
-			PrintWriter writer = response.getWriter();
-			writer.println(output);
+			writer.println("Internal error");
+			log(e);			
 		}
 
 	}
@@ -112,5 +130,14 @@ public final class RockstarHandler extends AbstractHandler {
 		Map<String, String> options = new HashMap<>();
 		options.put("--disable-native-java", "--disable-native-java");
 		return Environment.create(is, opw, epw, options);
+	}
+	
+	private void log(String message) {
+		System.out.println(message);
+	}
+
+	private void log(Exception e) {
+		System.out.println(e.getMessage());
+		e.printStackTrace(System.out);
 	}
 }

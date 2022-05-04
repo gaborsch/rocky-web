@@ -1,5 +1,10 @@
 package rockstar.web;
 
+import java.net.URL;
+
+import org.eclipse.jetty.http.HttpContent.ContentFactory;
+import org.eclipse.jetty.server.ResourceContentFactory;
+import org.eclipse.jetty.server.ResourceService;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.handler.DebugHandler;
@@ -53,8 +58,7 @@ public class Main {
 
 		RockstarHandler processor = new RockstarHandler();
 		HealthHandler healthHandler = new HealthHandler();
-		ResourceHandler staticHandler = new ResourceHandler();
-		staticHandler.setResourceBase("./public");
+		ResourceHandler staticHandler = createStaticHandler();
 
 		chain.addHandler(processor);
 		chain.addHandler(staticHandler);
@@ -64,6 +68,19 @@ public class Main {
 		// Start the Server so it starts accepting connections from clients.
 		server.start();
 		server.join();
+	}
+
+	private ResourceHandler createStaticHandler() {
+		ResourceHandler staticHandler = new ResourceHandler();
+
+	    String  baseStr  = "/public";
+	    URL     baseUrl  = Main.class.getResource( baseStr ); 
+	    String  basePath = baseUrl.toExternalForm();
+
+	    staticHandler.setWelcomeFiles(new String[]{ "index.html" });
+	    staticHandler.setResourceBase( basePath );
+	    System.out.println("serving: " + staticHandler.getBaseResource());		
+		return staticHandler;
 	}
 
 	private int getIntProperty(String name, int defaultValue) {
