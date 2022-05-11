@@ -1,23 +1,28 @@
 package rockstar.web;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.eclipse.jetty.http.HttpContent.ContentFactory;
-import org.eclipse.jetty.server.ResourceContentFactory;
-import org.eclipse.jetty.server.ResourceService;
+import org.eclipse.jetty.http.HttpVersion;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
-import org.eclipse.jetty.server.handler.DebugHandler;
+import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
 public class Main {
+	
+	public static final String JKS_FILE_NAME = "rockyrockstar.org.jks";
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("Starting Rocky Web");
+		System.out.println("Starting Rocky Web");		
 		new Main().run();
 	}
 
@@ -26,24 +31,25 @@ public class Main {
 		QueuedThreadPool threadPool = new QueuedThreadPool();
 		threadPool.setName("server");
 
+		// Configure TCP/IP parameters.
 		// Create a Server instance.
 		Server server = new Server(threadPool);
 
-		// Create a ServerConnector to accept connections from clients.
-		ServerConnector connector = new ServerConnector(server);
-
-		// Configure TCP/IP parameters.
-		// The port to listen to.
-		int port = getIntProperty("port", 8080);
-		connector.setPort(port);
-
 		// The address to bind to.
 		String host = getStringProperty("host", "127.0.0.1");
-		connector.setHost(host);
-		System.out.println("Starting on host " + host + ":" + port);
+		int port = getIntProperty("port", 8080);
 
-		// Add the Connector to the Server
-		server.addConnector(connector);
+		// create HTTP connector and add it to the Server
+		if (port > 0) {
+			server.addConnector(createHttpConnector(server, host, port));
+		}
+
+		int sslport = getIntProperty("sslport", 8443);
+
+		// create HTTPS connector and add it to the Server
+		if (sslport > 0) {
+			server.addConnector(createHttpsConnector(server, host, sslport));
+		}
 
 		// Set Handlers to handle requests/responses.
 		HandlerCollection sequence = new HandlerCollection();
@@ -56,10 +62,12 @@ public class Main {
 		sequence.addHandler(chain);
 //		sequence.addHandler(logger);
 
+		RedirectHandler redirectHandler = new RedirectHandler();
 		RockstarHandler processor = new RockstarHandler();
 		HealthHandler healthHandler = new HealthHandler();
 		ResourceHandler staticHandler = createStaticHandler();
-
+		
+		chain.addHandler(redirectHandler);
 		chain.addHandler(processor);
 		chain.addHandler(staticHandler);
 		chain.addHandler(healthHandler);
@@ -70,16 +78,61 @@ public class Main {
 		server.join();
 	}
 
+	private ServerConnector createHttpConnector(Server server, String host, int port) {
+		// Create a ServerConnector to accept connections from clients.
+		ServerConnector connector = new ServerConnector(server);
+
+		// The port to listen to.
+		connector.setPort(port);
+		connector.setHost(host);
+		System.out.println("Starting HTTP on host " + host + ":" + port);
+
+		return connector;
+	}
+
+	private ServerConnector createHttpsConnector(Server server, String host, int sslport) {
+		// Create a ServerConnector to accept connections from clients.
+		System.out.println("Starting HTTPS on host " + host + ":" + sslport);
+
+		HttpConfiguration https = new HttpConfiguration();
+		https.addCustomizer(new SecureRequestCustomizer());
+
+		SslContextFactory.Server sslContextFactory = new SslContextFactory.Server();
+		sslContextFactory.setKeyStorePath(getJKSResource().toExternalForm());
+		sslContextFactory.setKeyStorePassword("123456");
+		sslContextFactory.setKeyManagerPassword("123456");
+
+		ServerConnector sslConnector = new ServerConnector(server,
+				new SslConnectionFactory(sslContextFactory, HttpVersion.HTTP_1_1.asString()),
+				new HttpConnectionFactory(https));
+
+		sslConnector.setPort(sslport);
+		return sslConnector;
+	}
+
+	private URL getJKSResource() {
+		String jkspath = getStringProperty("jkspath", null);
+		if (jkspath == null) {
+			return Main.class.getResource("/" + JKS_FILE_NAME);
+		}
+		try {
+			System.out.println("Using JKS from path: " + jkspath);
+			return new URL("file://"+jkspath);
+		} catch (MalformedURLException e) {
+			throw new RuntimeException("Invalid jkspath: " + jkspath, e);
+		}
+	}
+
 	private ResourceHandler createStaticHandler() {
 		ResourceHandler staticHandler = new ResourceHandler();
 
-	    String  baseStr  = "/public";
-	    URL     baseUrl  = Main.class.getResource( baseStr ); 
-	    String  basePath = baseUrl.toExternalForm();
+		String baseStr = "/public";
+		URL baseUrl = Main.class.getResource(baseStr);
+		String basePath = baseUrl.toExternalForm();
 
-	    staticHandler.setWelcomeFiles(new String[]{ "index.html" });
-	    staticHandler.setResourceBase( basePath );
-	    System.out.println("serving: " + staticHandler.getBaseResource());		
+		staticHandler.setWelcomeFiles(new String[] { "index.html" });
+		staticHandler.setResourceBase(basePath);
+		System.out.println("serving: " + staticHandler.getBaseResource());
 		return staticHandler;
 	}
 
