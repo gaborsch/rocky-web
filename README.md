@@ -1,2 +1,1 @@
-# rocky-web
-Website for Rocky
+# Visit [rockyrockstar.org](https://www.rockyrockstar.org/index.html)!
