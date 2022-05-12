@@ -2,6 +2,11 @@ package rockstar.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
+import java.util.StringJoiner;
 
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
@@ -23,7 +28,26 @@ public class HealthHandler extends AbstractHandler {
 			baseRequest.setHandled(true);
 			PrintWriter writer = response.getWriter();
 			writer.println("OK\n");
+			writer.println("Host IPs: " + getIpAddresses());
 		}
 	}
+	
+	public static String getIpAddresses ()  {
+		Enumeration<NetworkInterface> ifs;
+		try {
+			StringJoiner sj = new StringJoiner(", ");
+			ifs = NetworkInterface.getNetworkInterfaces();
+			ifs.asIterator().forEachRemaining(ni -> {
+				ni.getInetAddresses().asIterator().forEachRemaining(ia -> {
+					if (!ia.isLoopbackAddress() && ia.isSiteLocalAddress())
+					sj.add(ia.getHostAddress());
+				});
+			});
+			return sj.toString();
+		} catch (SocketException e) {
+			return e.getMessage();
+		}
 
+	}
+	
 }
