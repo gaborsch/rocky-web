@@ -35,7 +35,7 @@ public final class RockstarHandler extends AbstractHandler {
 
 		String path = baseRequest.getPathInContext();
 		
-		//log("Request path: "+path);
+		log("Request path: "+path);
 
 		try {
 			if (path.startsWith("/execute")) {

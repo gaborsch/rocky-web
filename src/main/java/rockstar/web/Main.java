@@ -62,9 +62,9 @@ public class Main {
 		sequence.addHandler(chain);
 //		sequence.addHandler(logger);
 
+		HealthHandler healthHandler = new HealthHandler();
 		RedirectHandler redirectHandler = new RedirectHandler();
 		RockstarHandler processor = new RockstarHandler();
-		HealthHandler healthHandler = new HealthHandler();
 		ResourceHandler staticHandler = createStaticHandler();
 		
 		chain.addHandler(healthHandler);
