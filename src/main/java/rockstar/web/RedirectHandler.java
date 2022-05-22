@@ -22,12 +22,11 @@ public class RedirectHandler extends AbstractHandler {
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		String scheme = baseRequest.getScheme();
-		String host = baseRequest.getServerName();
+//		String host = baseRequest.getServerName();
 		int port = baseRequest.getServerPort();
 		String path = baseRequest.getPathInContext();
 
-		if ((host != null && host.equalsIgnoreCase(ROCKYROCKSTAR_ORG))
-				|| (scheme != null && !scheme.equalsIgnoreCase(SCHEME_HTTPS)) 
+		if ((scheme != null && !scheme.equalsIgnoreCase(SCHEME_HTTPS))
 				|| (port != PORT_HTTPS)) {
 			String targetPort = (port == PORT_HTTPS) ? "" : (":" + PORT_HTTPS);
 

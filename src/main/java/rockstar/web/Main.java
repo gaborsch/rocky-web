@@ -67,10 +67,10 @@ public class Main {
 		HealthHandler healthHandler = new HealthHandler();
 		ResourceHandler staticHandler = createStaticHandler();
 		
+		chain.addHandler(healthHandler);
 		chain.addHandler(redirectHandler);
 		chain.addHandler(processor);
 		chain.addHandler(staticHandler);
-		chain.addHandler(healthHandler);
 		chain.addHandler(new DefaultHandler());
 
 		// Start the Server so it starts accepting connections from clients.
