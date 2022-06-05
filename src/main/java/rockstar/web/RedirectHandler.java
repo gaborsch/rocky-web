@@ -1,7 +1,6 @@
 package rockstar.web;
 
 import java.io.IOException;
-import java.util.StringJoiner;
 
 import org.eclipse.jetty.http.HttpStatus;
 import org.eclipse.jetty.server.Request;

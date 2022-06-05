@@ -38,13 +38,14 @@ public class Main {
 		// The address to bind to.
 		String host = getStringProperty("host", "127.0.0.1");
 		int port = getIntProperty("port", 8080);
+		int sslport = getIntProperty("sslport", 8443);
+		String disableRedirect = getStringProperty("disableRedirect", null);
 
 		// create HTTP connector and add it to the Server
 		if (port > 0) {
 			server.addConnector(createHttpConnector(server, host, port));
 		}
 
-		int sslport = getIntProperty("sslport", 8443);
 
 		// create HTTPS connector and add it to the Server
 		if (sslport > 0) {
@@ -68,7 +69,11 @@ public class Main {
 		ResourceHandler staticHandler = createStaticHandler();
 		
 		chain.addHandler(healthHandler);
-		chain.addHandler(redirectHandler);
+		if (disableRedirect == null) {
+			chain.addHandler(redirectHandler);
+		} else {
+			System.out.println("Redirect disabled");
+		}
 		chain.addHandler(processor);
 		chain.addHandler(staticHandler);
 		chain.addHandler(new DefaultHandler());
