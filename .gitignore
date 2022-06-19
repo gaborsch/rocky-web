@@ -5,4 +5,5 @@ private
 **/monaco-editor/esm/
 /target/
 /logs
+*.log
 /dependency-reduced-pom.xml

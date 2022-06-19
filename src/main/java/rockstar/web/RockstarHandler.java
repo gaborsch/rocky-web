@@ -15,6 +15,8 @@ import java.util.Map;
 import org.eclipse.jetty.io.WriterOutputStream;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,13 +31,16 @@ public final class RockstarHandler extends AbstractHandler {
 	private static final String PROGRAM_NAME_ROCKSTAR = "Rockstar";
 	private static final String CONTENT_TYPE_TEXT_HTML_CHARSET_UTF_8 = "text/html;charset=utf-8";
 
+	public static final Logger logger = LogManager.getLogger(RockstarHandler.class);
+	public static final Logger executionLogger = LogManager.getLogger("execution");
+
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
 		String path = baseRequest.getPathInContext();
 		
-		log("Request path: "+path);
+		logger.debug("Request path: "+path);
 
 		try {
 			if (path.startsWith("/execute")) {
@@ -44,7 +49,12 @@ public final class RockstarHandler extends AbstractHandler {
 				baseRequest.setHandled(true);
 				String source = request.getParameter(PARAMETER_SRC);
 				String input = request.getParameter(PARAMETER_INP);
-				String output = run(source, input != null ? input : "");
+				executionLogger.debug("execute source:\n"+source);
+				if (input != null && ! input.isEmpty()) {
+					executionLogger.debug("execute input:\n"+input);
+				}
+				String output = run(source, input != null ? input : "");				
+				executionLogger.debug("execute output:\n"+output);
 				PrintWriter writer = response.getWriter();
 				writer.println(output);
 			} else if (path.startsWith("/list")) {
@@ -52,7 +62,9 @@ public final class RockstarHandler extends AbstractHandler {
 				response.setStatus(HttpServletResponse.SC_OK);
 				baseRequest.setHandled(true);
 				String source = request.getParameter(PARAMETER_SRC);
+				executionLogger.debug("list source:\n"+source);
 				String output = list(source);
+				executionLogger.debug("list output:\n"+output);
 				PrintWriter writer = response.getWriter();
 				writer.println(output);
 			} else if (path.startsWith("/explain")) {
@@ -60,7 +72,9 @@ public final class RockstarHandler extends AbstractHandler {
 				response.setStatus(HttpServletResponse.SC_OK);
 				baseRequest.setHandled(true);
 				String source = request.getParameter(PARAMETER_SRC);
+				executionLogger.debug("explain source:\n"+source);
 				String output = explain(source);
+				executionLogger.debug("explain output:\n"+output);
 				PrintWriter writer = response.getWriter();
 				writer.println(output);
 			}
@@ -76,7 +90,7 @@ public final class RockstarHandler extends AbstractHandler {
 			baseRequest.setHandled(true);
 			PrintWriter writer = response.getWriter();
 			writer.println("Internal error");
-			log(e);			
+			logger.warn("Internal error", e);			
 		}
 
 	}
@@ -130,14 +144,5 @@ public final class RockstarHandler extends AbstractHandler {
 		Map<String, String> options = new HashMap<>();
 		options.put("--disable-native-java", "--disable-native-java");
 		return Environment.create(is, opw, epw, options);
-	}
-	
-	private void log(String message) {
-		System.out.println(message);
-	}
-
-	private void log(Exception e) {
-		System.out.println(e.getMessage());
-		e.printStackTrace(System.out);
 	}
 }

@@ -16,13 +16,16 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
 	
+	public static final Logger logger = LogManager.getLogger(Main.class);
 	public static final String JKS_FILE_NAME = "rockyrockstar.org.jks";
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("Starting Rocky Web");		
+		logger.debug("Starting Rocky Web");		
 		new Main().run();
 	}
 
@@ -72,7 +75,7 @@ public class Main {
 		if (disableRedirect == null) {
 			chain.addHandler(redirectHandler);
 		} else {
-			System.out.println("Redirect disabled");
+			logger.debug("Redirect disabled");
 		}
 		chain.addHandler(processor);
 		chain.addHandler(staticHandler);
@@ -90,14 +93,14 @@ public class Main {
 		// The port to listen to.
 		connector.setPort(port);
 		connector.setHost(host);
-		System.out.println("Starting HTTP on host " + host + ":" + port);
+		logger.debug("Starting HTTP on host " + host + ":" + port);
 
 		return connector;
 	}
 
 	private ServerConnector createHttpsConnector(Server server, String host, int sslport) {
 		// Create a ServerConnector to accept connections from clients.
-		System.out.println("Starting HTTPS on host " + host + ":" + sslport);
+		logger.debug("Starting HTTPS on host " + host + ":" + sslport);
 
 		HttpConfiguration https = new HttpConfiguration();
 		https.addCustomizer(new SecureRequestCustomizer());
@@ -121,7 +124,7 @@ public class Main {
 			return Main.class.getResource("/" + JKS_FILE_NAME);
 		}
 		try {
-			System.out.println("Using JKS from path: " + jkspath);
+			logger.debug("Using JKS from path: " + jkspath);
 			return new URL("file://"+jkspath);
 		} catch (MalformedURLException e) {
 			throw new RuntimeException("Invalid jkspath: " + jkspath, e);
@@ -137,7 +140,7 @@ public class Main {
 
 		staticHandler.setWelcomeFiles(new String[] { "index.html" });
 		staticHandler.setResourceBase(basePath);
-		System.out.println("serving: " + staticHandler.getBaseResource());
+		logger.debug("serving: " + staticHandler.getBaseResource());
 		return staticHandler;
 	}
 
@@ -145,11 +148,11 @@ public class Main {
 		String strValue = getStringProperty(name, null);
 		int value = defaultValue;
 		if (strValue != null) {
-			System.out.println("Requested " + name + ": " + strValue);
+			logger.debug("Requested " + name + ": " + strValue);
 			try {
 				value = Integer.parseInt(strValue);
 			} catch (NumberFormatException e) {
-				System.out.println("Invalid " + name + ": " + strValue);
+				logger.debug("Invalid " + name + ": " + strValue);
 			}
 		}
 		return value;
