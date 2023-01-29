@@ -2,7 +2,13 @@ package rockstar.web;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.KeyStoreException;
+import java.security.cert.X509Certificate;
+import java.text.DateFormat;
+import java.util.Date;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.server.HttpConfiguration;
 import org.eclipse.jetty.server.HttpConnectionFactory;
@@ -16,8 +22,6 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Main {
 	
@@ -110,12 +114,44 @@ public class Main {
 		sslContextFactory.setKeyStorePassword("123456");
 		sslContextFactory.setKeyManagerPassword("123456");
 
+		logCertificate(sslContextFactory);
+
 		ServerConnector sslConnector = new ServerConnector(server,
 				new SslConnectionFactory(sslContextFactory, HttpVersion.HTTP_1_1.asString()),
 				new HttpConnectionFactory(https));
 
 		sslConnector.setPort(sslport);
 		return sslConnector;
+	}
+
+	private void logCertificate(SslContextFactory.Server sslContextFactory) {
+		try {
+			sslContextFactory.start();
+			X509Certificate cert = (X509Certificate) sslContextFactory.getKeyStore().getCertificate("rockyrockstar.org");
+			if (cert != null) {
+				DateFormat df = DateFormat.getDateTimeInstance();
+				Date startDate= cert.getNotBefore();
+				Date endDate = cert.getNotAfter();
+				logger.info("Cert is valid from  " + df.format(startDate) + " until " + df.format(endDate));
+				if (endDate.before(new Date())) {
+					logger.info("Cert is EXPIRED! Renew at sslforfree.com, install in the load balancer with CA bundle and private key!");
+				}
+			} else {
+				logger.error("Cert not found!");
+			}
+		} catch (KeyStoreException e) {
+			logger.error("Could not extract certificate from sslContextFactory", e);
+		} catch (Exception e) {
+			logger.error("Could not start sslContextFactory", e);
+		} finally {
+			if (sslContextFactory.isRunning()) {
+				try {
+					sslContextFactory.stop();
+				} catch (Exception e) {
+					logger.error("Could not stop sslContextFactory", e);
+				}
+			}
+		}
 	}
 
 	private URL getJKSResource() {
