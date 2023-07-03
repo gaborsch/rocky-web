@@ -143,6 +143,7 @@ public final class RockstarHandler extends AbstractHandler {
 		PrintStream epw = new PrintStream(error, true, StandardCharsets.UTF_8);
 		Map<String, String> options = new HashMap<>();
 		options.put("--disable-native-java", "--disable-native-java");
+		options.put("--bigdecimal", "--bigdecimal");
 		return Environment.create(is, opw, epw, options);
 	}
 }
